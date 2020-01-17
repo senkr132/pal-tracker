@@ -24,6 +24,7 @@ public class JdbcTimeEntryRepositoryTest {
     @Before
     public void setUp() {
         MysqlDataSource dataSource = new MysqlDataSource();
+        System.out.println(System.getenv("SPRING_DATASOURCE_URL"));
         dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
 
         subject = new JdbcTimeEntryRepository(dataSource);
